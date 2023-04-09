@@ -120,11 +120,17 @@ if authentication_status:
     
     st.write("教程[link](https://github.com/bryandlee/animegan2-pytorch")
 
+    SIZES = ('paprika', 'celeba_distill', 'face_paintv1','face_paintv2')
+    sizz = st.select_slider("大小", options=(['paprika', 'celeba_distill', 'face_paintv1','face_paintv2']))
+
     st.text("上传图片")
+
+
 
     device = "cpu"
     net = Generator()
-    net.load_state_dict(torch.load("weights/paprika.pt", map_location="cpu"))
+    modelpath = "weights/"+sizz+".pt"
+    net.load_state_dict(torch.load(modelpath, map_location="cpu"))
     net.to(device).eval()
 
     uploaded_file = st.file_uploader("选择..", type=["jpg","png","jpeg"])
