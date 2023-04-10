@@ -120,8 +120,8 @@ if authentication_status:
     
     st.write("教程[link](https://github.com/bryandlee/animegan2-pytorch")
 
-    SIZES = ('paprika', 'celeba_distill', 'face_paintv1','face_paintv2')
-    sizz = st.select_slider("大小", options=(['paprika', 'celeba_distill', 'face_paintv1','face_paintv2']))
+    SIZES = ('paprika', 'celeba_distill', 'face_paint_512_v1','face_paint_512_v2')
+    sizz = st.select_slider("大小", options=(['paprika', 'celeba_distill', 'face_paint_512_v1','face_paint_512_v2']))
 
     st.text("上传图片")
 
